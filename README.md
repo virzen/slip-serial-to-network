@@ -1,4 +1,13 @@
-# slip-serial-to-network
+# ultrasonic-to-osc
+
+## Arduino
+
+Setup:
+1. Copy file to Arduino editor
+2. Change the `echoPin` and `trigPin` to the ones matching your board
+3. Run!
+
+## Transmitter
 
 A simple Node.js script that acts as a bridge between
 an Arduino or Teensy that uses the OSC (Open Sounc Control)
@@ -40,4 +49,6 @@ will not be altered.
 
 ## Credits
 
-Based on [ttapa/Projects/NodeJS/SLIP](https://github.com/tttapa/Projects/tree/master/Arduino/NodeJS/SLIP) and [thread on Arduino forum](https://forum.arduino.cc/t/osc-over-usb/520680), thanks a lot!
+Arduino code is a mix from the [ultrasonic sensor tutorial](https://create.arduino.cc/projecthub/abdularbi17/ultrasonic-sensor-hc-sr04-with-arduino-tutorial-327ff6) and OSC package [example](https://github.com/CNMAT/OSC/blob/master/examples/SerialSendMessage/SerialSendMessage.ino).
+
+Transmitter is forked from [ttapa/Projects/NodeJS/SLIP](https://github.com/tttapa/Projects/tree/master/Arduino/NodeJS/SLIP) and explained in the [thread on Arduino forum](https://forum.arduino.cc/t/osc-over-usb/520680), thanks a lot!

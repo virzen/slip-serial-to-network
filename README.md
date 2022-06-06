@@ -1,6 +1,6 @@
 # slip-serial-to-network
 
-Used for forwarding OSC packets sent from Arduino through SLIPSerial to programs that expect the packets to come from the network.
+Created for forwarding OSC packets sent from Arduino through SLIPSerial to programs that expect the packets to come from the network, specifically for MadMapper, might work for other ones.
 
 ## Running
 ```shell
@@ -15,3 +15,7 @@ You can look it up in the hardware manager, but there is also some detection cap
 ```js
 path = 'COM1'
 ```
+
+## Credits
+
+Based on [ttapa/Projects/NodeJS/SLIP](https://github.com/tttapa/Projects/tree/master/Arduino/NodeJS/SLIP) and [thread he sent it over](https://forum.arduino.cc/t/osc-over-usb/520680), thanks a lot!

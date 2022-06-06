@@ -39,7 +39,6 @@
 */
 
 let path;
-path = 'COM4'; // Uncomment this line to select a specific port instead of searching for an Arduino.
 const baudRate = 9600;
 
 const defaultLocalPort = 8888;
@@ -49,17 +48,20 @@ const defaultRemoteAddress = 'localhost';
 // ------------ UDP ------------ //
 //#region UDP
 
-let localPort = defaultLocalPort;
 if (process.argv.length > 2)
-    localPort = parseInt(process.argv[2]);
+    path = process.argv[2];
+
+let localPort = defaultLocalPort;
+if (process.argv.length > 3)
+    localPort = parseInt(process.argv[3]);
 
 let remotePort = defaultRemotePort;
-if (process.argv.length > 3)
-    remotePort = parseInt(process.argv[3]);
+if (process.argv.length > 4)
+    remotePort = parseInt(process.argv[4]);
 
 let remoteAddr = defaultRemoteAddress;
-if (process.argv.length > 4)
-    remoteAddr = process.argv[4];
+if (process.argv.length > 5)
+    remoteAddr = process.argv[5];
 
 const dgram = require('dgram');
 const server = dgram.createSocket('udp4');
@@ -103,6 +105,7 @@ if (path) {
     openPort(path);
 } else {
     SerialPort.list().then((ports) => {
+        console.log(ports)
         if (ports.length == 0)
             console.error("No Serial ports found");
 
@@ -110,9 +113,9 @@ if (path) {
         ports.some((port) => {
             if (port.manufacturer
                 && port.manufacturer.match(/(?:.*Teensy.*)|(?:.*Arduino.*)/)) {
-                path = port.comName;
+                path = port.path;
                 console.log('Found Arduino');
-                console.log('\t' + port.comName);
+                console.log('\t' + port.path);
                 console.log('\t\t' + port.pnpId);
                 console.log('\t\t' + port.manufacturer);
                 return true;

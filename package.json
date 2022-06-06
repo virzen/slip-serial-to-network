@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node src/main.js"
+  },
   "dependencies": {
     "dgram-server": "^0.1.0",
     "serialport": "^10.4.0"

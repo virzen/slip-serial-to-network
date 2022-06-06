@@ -39,7 +39,7 @@
 */
 
 let path;
-path = '/dev/ttyS3'; // Uncomment this line to select a specific port instead of searching for an Arduino.
+path = 'COM4'; // Uncomment this line to select a specific port instead of searching for an Arduino.
 const baudRate = 9600;
 
 const defaultLocalPort = 8888;
@@ -99,16 +99,10 @@ const {SerialPort} = require('serialport');
 
 let port;
 
-console.log('1')
-
 if (path) {
-    console.log('2')
     openPort(path);
 } else {
-    console.log('3')
     SerialPort.list().then((ports) => {
-        console.log('4')
-        console.log(ports)
         if (ports.length == 0)
             console.error("No Serial ports found");
 

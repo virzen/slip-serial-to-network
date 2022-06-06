@@ -6,16 +6,15 @@ protocol over SLIP (Serial Line Internet Protocol)
 and a program that uses the OSC protocol over UDP.
 
 Setup:
-```shell
-npm install
-```
+
+1. Install [node](https://nodejs.org/en/)
+2. Run `npm install`
 
 Usage:
 ```shell
 npm start [-- COM-port [local-port [remote-port [remote-address]]]]
 ```
 
-Requires [node](https://nodejs.org/en/).
 
 The local port corresponds to the 'send' port in the audio software.
 The remote port corresponds to the 'receive' port in the audio software.

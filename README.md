@@ -15,7 +15,10 @@ Usage:
 npm start [-- COM-port [local-port [remote-port [remote-address]]]]
 ```
 
-The port to set the external program (MapMapper, Reaper) to is the `remote-port`.
+Requires [node](https://nodejs.org/en/).
+
+The local port corresponds to the 'send' port in the audio software.
+The remote port corresponds to the 'receive' port in the audio software.
 
 The script will automatically look for Arduino or Teensy boards connected
 via USB. If no such board can be find, the first COM port will be selected and 
@@ -35,8 +38,6 @@ When a UDP message on the local port is received, the remote address will
 be automatically updated to the sender of that UDP message. The remote port
 will not be altered.
 
-The local port corresponds to the 'send' port in the audio software.
-The remote port corresponds to the 'receive' port in the audio software.
 
 ## Credits
 
